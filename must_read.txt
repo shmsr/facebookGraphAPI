@@ -1,0 +1,29 @@
+These are the problems I've faced:
+
+Graph API is really complex to use. At some time it's working and after some, it just doesn't work a damn.
+
+1) Error using HTTP protocol = Use HTTPS (Enforce HTTPS is enabled on Facebook APP). If you don't, you won't be able to log in.
+2) Don't run it locally = Use ngrok/ some service to get a HTTPS deployed link for your locally deployed mode setup
+3) Whitelist the HTTPS domain by adding it to "App Domains" in Facebook App
+4) If using python, there's no tutorial related to Facebook. Tutorials available are many years old and Graph API has changed signicantly and even the policy's are changed a lot
+5) Not many resourced for Python for using Facebook-SDK
+6) Rather Javascript or Java is preferred, from what I saw.
+7) Add the domain and webhook to "Valid OAuth Redirect URIs" as "Use Strict Mode for Redirect URIs" is enabled
+8) User's token and Page's token are different, remember. So, both's graph will work different ways.
+9) Access tokens do expire. Facebook's page token expires after 2 hours. One is that generate a longer lasting one. Or change the token periodically
+10) I have generated one longer lasting token valid till July 5, 2019
+11) GRAPH API's put_object won't work as permission are not given. We are only allowed to post some status only if we have valid permission.
+12) For it's permission App Review must be done
+13) For that "Privacy Policies" and "T&C" required
+14) Database is SQLite along with ORM is SQLAlchemy
+15) We have two tables, one of "users" and one of "posts"
+
++ Feel free to contact me on "sarkar.subhams2@gmail.com"
++ If any bug found, report me
++ If any modification, or anything more needed to done, notify me.
++ If there's problem in setting up the application, do bug me.
++ If required credentials such as keys, tokens; do bug me.
+
+Thanks,
+
+Subham
