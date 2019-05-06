@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">The app provides authentication using Facebook. As new rules don't allow to harvest or modification of posts on user's profile, I hvae used the Graph API to do the same on Facebook Page's.</p>
+  <hr class="my-4">
+  <p>Here! See the button below? Yes, that one! Tap it!</p>
+  <p class="lead">
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false" data-scope="public_profile">
+            Continue with Facebook
+        </div>
+  </p>
+</div>
+{% endblock %}

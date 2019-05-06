@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="col-md-8">
+    <form method="POST">
+        <div class="form-group">
+            <hr>
+            <h4><b>Post anything!</b></h4>
+            <hr>
+            <input type="status" name="status" class="form-control" id="input_status" aria-describedby="statusHelp" placeholder="Post something?">
+            <small id="statusHelp" class="form-text text-muted">Post whatever comes to your mind!</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <hr>
+    <h4><b>Posts on page {{ page }}</b></h4>
+    <hr>
+    {% for post in posts %}
+    {% if loop.index > 0 %}
+    <div class="card border-primary">
+        <div class="card-header">Posted on <b>{{ post['created_time'] }}</b></div>
+        <div class="card-body text-success">
+            <h6 class="card-title">
+                <img alt="40x40" class="mr-2 rounded" style="width: 40px; height: 40px;" src="{{ img_page }}"
+                    data-holder-rendered="true">
+                <a href="">{{ page }}</a>
+            </h6>
+            <p class="card-text"><b>{{ post['message'] }}</b></p>
+        </div>
+    </div>
+    <br>
+    {% endif %}
+    {% endfor %}
+    
+</div>
+{% endblock content %}
+{% block main_container_right %}
+<div class="col-md-4">
+    <div class="btn btn-outline-dark btn-lg btn-block">
+        <a href="/logout" id="logout">Log out</a>
+        <script>
+            document.getElementById('logout').onclick = function () {
+                FB.logout(function (response) {});
+            };
+        </script>
+    </div>
+    <br>
+    <div class="card border-primary">
+        <img class="card-img-top" src="{{ img_usr }}" alt="Card image cap">
+        <div class="card-body text-center">
+            <h4 class="card-title"><strong>Hello, {{ user['name'] }}!</strong></h4>
+        </div>
+    </div>
+</div>
+{% endblock main_container_right %}
